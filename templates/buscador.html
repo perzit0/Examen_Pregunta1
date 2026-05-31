@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Buscador</title>
+</head>
+
+<body>
+
+    <h1>Buscar Producto</h1>
+
+    <form action="/buscar_producto" method="POST">
+
+        <label>Código:</label>
+
+        <input
+            type="text"
+            name="codigo"
+            required>
+
+        <button type="submit">
+            Buscar
+        </button>
+
+    </form>
+
+    <br>
+
+    {% if producto %}
+
+    <h3>Producto encontrado</h3>
+
+    <p>
+        Nombre: {{ producto.nombre }}
+    </p>
+
+    <p>
+        Precio: S/. {{ producto.precio }}
+    </p>
+
+    {% endif %}
+
+    <br>
+
+    <a href="/principal">
+        Regresar
+    </a>
+
+</body>
+
+</html>
